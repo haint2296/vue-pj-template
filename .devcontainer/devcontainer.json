@@ -1,0 +1,49 @@
+{
+  "name": "Vue Project Template (Node 22-bullseye)",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bullseye",
+  "runArgs": [
+    "--network",
+    "docker-net",
+    "--name",
+    "vue-project-template-container"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "oderwat.indent-rainbow",
+        "alefragnani.bookmarks",
+        "aaron-bond.better-comments",
+        "mutantdino.resourcemonitor",
+        "ionutvmi.path-autocomplete",
+        "gruntfuggly.todo-tree",
+        "wayou.vscode-todo-highlight",
+        "csstools.postcss",
+        "bradlc.vscode-tailwindcss",
+        "github.copilot",
+        "mikestead.dotenv",
+        "redhat.vscode-yaml",
+        "donjayamanne.githistory",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "stylelint.vscode-stylelint",
+        "vincaslt.highlight-matching-tag",
+        "formulahendry.auto-close-tag",
+        "shd101wyy.markdown-preview-enhanced",
+        "YoavBls.pretty-ts-errors",
+        "Vue.volar",
+        "esbenp.prettier-vscode",
+        "EditorConfig.EditorConfig",
+        "bradlc.vscode-tailwindcss",
+        "42Crunch.vscode-openapi" // OpenAPI
+      ]
+    }
+  },
+  "remoteUser": "root",
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
+  ]
+}
+
+
+
+

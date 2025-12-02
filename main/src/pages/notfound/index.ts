@@ -1,0 +1,1 @@
+export { notfoundRoute } from './route';
