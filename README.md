@@ -2,11 +2,12 @@
 
 # 🚀 Vue 3 + TypeScript Project Template
 
-**A modern, production-ready Vue 3 starter template with TypeScript, Vite, ESLint, Prettier, and DevContainer support.**
+**A modern, production-ready Vue 3 starter template with TypeScript, Vite, Tailwind CSS v4, ESLint, Prettier, and DevContainer support.**
 
 [![Vue 3](https://img.shields.io/badge/Vue-3.x-brightgreen.svg)](https://vuejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-5.x-646CFF.svg)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.x-38bdf8.svg)](https://tailwindcss.com/)
 
 </div>
 
@@ -17,7 +18,8 @@
 - 🎯 **Vue 3** - Composition API with `<script setup>` syntax
 - 🔷 **TypeScript** - Full type safety and IntelliSense
 - ⚡ **Vite** - Lightning-fast HMR and optimized builds
-- 🎨 **Vue Router** - File-based routing architecture
+- 🎨 **Tailwind CSS v4** - Modern utility-first CSS framework
+- 🧭 **Vue Router** - File-based routing architecture
 - 📏 **ESLint 9** - Flat config with type-aware linting
 - 💅 **Prettier** - Automatic code formatting
 - 🐳 **DevContainer** - Consistent development environment across teams
@@ -112,11 +114,11 @@ Uses **ESLint 9** with modern flat config format:
 
 Consistent code formatting with:
 
-- Single quotes for strings
+- Single quotes for strings (except CSS files - uses double quotes for Tailwind v4)
 - Trailing commas (ES5 style)
 - 120 character print width
 - 2 spaces indentation
-- Tailwind CSS class sorting support
+- Tailwind CSS v4 class sorting via `prettier-plugin-tailwindcss`
 
 ### TypeScript
 
@@ -125,6 +127,48 @@ Strict type checking enabled with:
 - `strict: true` - All strict type checks
 - Path aliases configured (`@/` → `src/`)
 - Vue 3 type definitions included
+
+### Tailwind CSS v4
+
+This project uses **Tailwind CSS v4** with the new `@import` and `@source` directives.
+
+#### ⚠️ Important: `@source` Directive Required
+
+In `main/src/app/styles/main.css`:
+
+```css
+@import 'tailwindcss';
+@source '../../../src';
+```
+
+**Why `@source` is critical:**
+- ❌ **Without `@source`**: Tailwind only generates base styles and theme variables
+- ❌ **No utility classes**: Classes like `text-3xl`, `font-bold`, `bg-blue-500` won't work
+- ✅ **With `@source`**: Tailwind scans your source files and generates all needed utility classes
+
+**Path breakdown:**
+```
+main/src/app/styles/main.css  (current file)
+           ↓
+       @source '../../../src'
+           ↓
+main/src/  (scans all .vue, .ts, .tsx files)
+```
+
+#### Prettier Configuration for CSS
+
+Special override for CSS files to preserve double quotes (required for Tailwind v4):
+
+```javascript
+overrides: [
+  {
+    files: '*.css',
+    options: {
+      singleQuote: false,  // Keep double quotes in CSS
+    },
+  },
+]
+```
 
 ## 🐳 DevContainer
 

@@ -13,9 +13,11 @@
     "format:check": "prettier --check \"src/**/*.{js,ts,vue,json,css,scss,md}\""
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.17",
     "axios": "^1.13.2",
     "dayjs": "^1.11.19",
     "js-cookie": "^3.0.5",
+    "tailwindcss": "^4.1.17",
     "vue": "^3.5.24",
     "vue-router": "^4.6.3"
   },
