@@ -39,11 +39,13 @@ In `src/app/styles/main.css`:
 ```
 
 **Why `@source` is needed:**
+
 - Without `@source`, Tailwind only generates base styles and theme variables
 - It does NOT generate utility classes (like `text-3xl`, `font-bold`, `text-red-500`)
 - The `@source` directive tells Tailwind which directories to scan for class usage
 
 **Path explanation:**
+
 - File location: `main/src/app/styles/main.css`
 - `@source '../../../src'` points to `main/src/` directory
 - This ensures Tailwind scans all Vue files in the `src/` directory
@@ -60,7 +62,7 @@ overrides: [
       singleQuote: false,
     },
   },
-]
+];
 ```
 
 ## 📚 Learn More

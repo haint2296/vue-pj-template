@@ -13,6 +13,7 @@
     "format:check": "prettier --check \"src/**/*.{js,ts,vue,json,css,scss,md}\""
   },
   "dependencies": {
+    "@faker-js/faker": "^10.1.0",
     "@headlessui/vue": "^1.7.23",
     "@tailwindcss/vite": "^4.1.17",
     "@tanstack/vue-query": "^5.92.1",
