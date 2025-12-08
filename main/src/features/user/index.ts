@@ -1,1 +1,1 @@
-export { LoginFormView } from './login';
+export { LoginFormUI } from './login-form';

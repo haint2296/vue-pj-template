@@ -5,6 +5,8 @@ import App from './app.vue';
 
 import { router } from './providers/routers';
 
+import { VueQueryPlugin } from '@tanstack/vue-query';
+
 import '@/app/styles/main.css';
 
 /**
@@ -19,6 +21,18 @@ bootstrap()
   .then(() => {
     const app = createApp(App);
     app.use(router);
+    app.use(VueQueryPlugin, {
+      queryClientConfig: {
+        defaultOptions: {
+          queries: {
+            staleTime: 60_000,
+            refetchOnWindowFocus: true,
+            refetchOnReconnect: true,
+            refetchOnMount: 'always',
+          },
+        },
+      },
+    });
     app.mount('#app');
   })
   .catch((error) => {
