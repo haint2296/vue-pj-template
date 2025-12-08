@@ -1,1 +1,1 @@
-export { LoginFormUI } from './login-form';
+export { FeatureLoginForm } from './login-form';
