@@ -4,17 +4,9 @@ import Axios from 'axios';
 
 import type { AxiosError, AxiosRequestConfig } from 'axios';
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5173';
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 export const AXIOS_INSTANCE = Axios.create({ baseURL: BASE_URL });
-
-AXIOS_INSTANCE.interceptors.request.use((config) => {
-  if (!import.meta.env.DEV && !config.url?.includes('localhost')) {
-    alert('You are not allowed to access this resource');
-    throw new Error('You are not allowed to access this resource');
-  }
-  return config;
-});
 
 // add a second `options` argument here if you want to pass extra options to each generated query
 export const customInstance = <T>(config: AxiosRequestConfig, options?: AxiosRequestConfig): Promise<T> => {
