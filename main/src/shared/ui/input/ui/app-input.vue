@@ -21,10 +21,12 @@ const props = withDefaults(
      * if not provided, will be generated automatically
      */
     id?: string | null;
+    placeholder?: string;
   }>(),
   {
     size: 'md',
     id: null,
+    placeholder: '',
   },
 );
 
@@ -58,9 +60,11 @@ const id = computed(() => {
 
 <template>
   <input
+    v-bind="$attrs"
     :id="id"
     v-model="value"
     type="text"
+    :placeholder="placeholder"
     class="flex w-full rounded-md border border-neutral-300 bg-white text-black shadow-sm transition-colors placeholder:text-neutral-400 focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
     :class="[sizeClass, props.class]"
   />

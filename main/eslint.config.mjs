@@ -124,7 +124,8 @@ export default tseslint.config(
       'vue/max-attributes-per-line': [
         'error',
         {
-          singleline: 3,
+          // Allow more attributes on a single line (e.g. <AppInput id ... type ... placeholder />)
+          singleline: 5,
           multiline: 1,
         },
       ],

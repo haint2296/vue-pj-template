@@ -18,8 +18,8 @@
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
     "editor.detectIndentation": false,
-    "editor.rulers": [120],
-    "editor.wordWrap": "bounded",
+    "editor.rulers": [100],
+    "editor.wordWrap": "off",
 
     // Code actions on save
     "editor.codeActionsOnSave": {
@@ -71,4 +71,3 @@
     ]
   }
 }
-
