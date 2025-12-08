@@ -128,6 +128,19 @@ Strict type checking enabled with:
 - Path aliases configured (`@/` → `src/`)
 - Vue 3 type definitions included
 
+### Mock Service Worker (MSW)
+
+This template can be extended with **MSW** for API mocking during development and testing.
+
+Basic setup (run inside the `main` directory):
+
+```bash
+cd main
+npx msw init ./public --save
+```
+
+This command will generate the MSW `mockServiceWorker.js` in the `public` folder and register it for use in your app.
+
 ### Tailwind CSS v4
 
 This project uses **Tailwind CSS v4** with the new `@import` and `@source` directives.
