@@ -56,14 +56,12 @@ async function handleSubmit() {
       @submit.prevent="handleSubmit"
     >
       <AppInput
-        id="email"
         v-model="email"
         type="email"
         placeholder="Email"
         aria-label="Email"
       />
       <AppInput
-        id="password"
         v-model="password"
         type="password"
         placeholder="Password"
