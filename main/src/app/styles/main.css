@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @source "../../../src";
+@import "./base.css";
+@import "./input.css";
 
 :root {
   --radius: 0.625rem;
@@ -68,22 +70,4 @@
   --sidebar-accent-foreground: oklch(0.985 0.002 247.839);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
-}
-
-@layer utilities {
-  .text-muted-foreground {
-    color: var(--muted-foreground);
-  }
-
-  .border-input {
-    border-color: var(--input);
-  }
-
-  .focus-visible\:border-ring:focus-visible {
-    border-color: var(--ring);
-  }
-
-  .focus-visible\:ring-ring\/50:focus-visible {
-    box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 50%, transparent);
-  }
 }

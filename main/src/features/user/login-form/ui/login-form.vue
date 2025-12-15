@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 
-import { AppInput, AppButton } from '@/shared/ui';
+import { Input, AppButton } from '@/shared/ui';
 import { useLogin } from '../model/use-login';
 import type { LoginFormPayload } from '../model/type';
 
@@ -44,30 +44,48 @@ async function handleSubmit() {
 <template>
   <div
     :class="props.class"
-    class="mx-4 max-w-[368px] md:rounded-2xl md:border md:border-gray-200 md:p-10"
+    class="mx-4 max-w-[368px] md:rounded-2xl md:border md:border-gray-200 md:p-6"
   >
-    <div class="mb-16">
+    <div class="mb-10 text-center">
       <h1 class="text-2xl font-bold">Welcome back</h1>
-      <p class="text-sm text-gray-500">Enter your email and password to continue</p>
+      <p class="text-sm text-gray-500">
+        Sign in to access your account, personalized travel plans made for you.
+      </p>
     </div>
 
     <form
-      class="space-y-2"
+      class="space-y-3"
       @submit.prevent="handleSubmit"
     >
-      <AppInput
-        v-model="email"
-        type="email"
-        placeholder="Email"
-        aria-label="Email"
-      />
-      <AppInput
-        v-model="password"
-        type="password"
-        placeholder="Password"
-        aria-label="Password"
-      />
-      <div class="my-2 flex justify-end">Forgot password?</div>
+      <div class="space-y-1">
+        <label
+          class="block text-sm text-gray-500"
+          for="email"
+          >Email address*</label
+        >
+        <Input
+          id="email"
+          v-model="email"
+          type="email"
+          placeholder="Email"
+          aria-label="Email"
+        />
+      </div>
+      <div class="space-y-1">
+        <label
+          class="block text-sm text-gray-500"
+          for="password"
+          >Password*</label
+        >
+        <Input
+          id="password"
+          v-model="password"
+          type="password"
+          placeholder="Password"
+          aria-label="Password"
+        />
+      </div>
+      <div class="text-muted-foreground my-2 flex justify-end text-xs">Forgot password?</div>
       <AppButton
         aria-label="Login"
         class="mt-10 w-full px-4 text-center"
@@ -76,6 +94,11 @@ async function handleSubmit() {
         <span v-if="isPending">Logging in...</span>
         <span v-else>Login</span>
       </AppButton>
+
+      <div class="text-muted-foreground text-md flex justify-center">
+        <span>Don't have an account?</span>
+        <Link to="/register">Register</Link>
+      </div>
     </form>
   </div>
 </template>
