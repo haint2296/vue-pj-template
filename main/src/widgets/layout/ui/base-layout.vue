@@ -4,11 +4,9 @@ import { Footer } from '@/widgets/footer';
 </script>
 
 <template>
-  <div>
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
-  </div>
+  <Header />
+  <main>
+    <router-view />
+  </main>
+  <Footer />
 </template>

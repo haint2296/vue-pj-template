@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import { ContainerFluid } from '@/shared/ui/container-fluid';
+import { ContainerFluid, Container } from '@/shared/ui';
 </script>
 
 <template>
-  <ContainerFluid class="w-full bg-gray-900 text-white">
-    <footer class="p-10">
-      <div
-        class="flex flex-col-reverse justify-start gap-4 transition-all duration-300 md:flex-row md:items-center md:justify-between"
+  <ContainerFluid class="text-whas-visited: w-full bg-gray-900 py-6">
+    <Container>
+      <footer
+        class="flex flex-col-reverse justify-start gap-4 text-white transition-all duration-300 md:flex-row md:items-center md:justify-between"
       >
         <div class="space-y-4">
           <div class="flex flex-wrap gap-2">
@@ -25,10 +25,22 @@ import { ContainerFluid } from '@/shared/ui/container-fluid';
         </div>
         <div class="space-y-4">
           <p>Get the app</p>
-          <div>IOS</div>
-          <div>Android</div>
+          <div>
+            <img
+              src="/icons/ios-download.png"
+              alt="ios-download"
+              class="h-10 w-35"
+            />
+          </div>
+          <div>
+            <img
+              src="/icons/android-download.png"
+              alt="android-download"
+              class="h-10 w-35"
+            />
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </Container>
   </ContainerFluid>
 </template>

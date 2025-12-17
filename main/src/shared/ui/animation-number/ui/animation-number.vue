@@ -1,18 +1,23 @@
 <script lang="ts" setup>
 import { cn } from '@/shared/lib';
-
 const props = withDefaults(
   defineProps<{
+    tag?: string;
     class?: string;
+    number: number;
   }>(),
   {
+    tag: 'div',
     class: '',
   },
 );
 </script>
 
 <template>
-  <div :class="cn('w-full', props.class)">
-    <slot />
-  </div>
+  <component
+    :is="tag"
+    :class="cn(props.class)"
+  >
+    {{ props.number }}<slot />
+  </component>
 </template>
