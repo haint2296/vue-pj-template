@@ -12,14 +12,14 @@ import { Container, ContainerFluid } from '@/shared/ui';
             alt="Logo"
             class="h-8 w-[128px]"
           />
-          <ul class="ml-4 flex items-center gap-4">
+          <ul class="ml-4 hidden items-center gap-4 md:flex">
             <li>Features</li>
             <li>Pricing</li>
             <li>Careers</li>
             <li>Help</li>
           </ul>
         </div>
-        <div class="flex items-center gap-4">
+        <div class="hidden items-center gap-4 min-[630px]:flex">
           <div>
             <img
               src="/icons/ios-download.png"
@@ -34,6 +34,13 @@ import { Container, ContainerFluid } from '@/shared/ui';
               class="h-10 w-35"
             />
           </div>
+        </div>
+        <div class="min-[630px]:hidden">
+          <img
+            src="/icons/menu.png"
+            alt="menu"
+            class="h-10 w-10"
+          />
         </div>
       </header>
     </Container>

@@ -5,8 +5,8 @@ import { ContainerFluid, Container } from '@/shared/ui';
 <template>
   <ContainerFluid class="bg-[url('/images/hero-banner.png')] bg-cover bg-center">
     <Container class="h-full py-10">
-      <div class="flex h-full">
-        <div class="flex w-1/2 flex-col items-center gap-2">
+      <div class="flex h-full flex-col gap-4 md:flex-row">
+        <div class="flex w-full flex-col items-center gap-2 md:w-1/2">
           <div class="mt-4">
             <h1 class="text-5xl font-bold">The easiest way to manage projects</h1>
             <p class="text-muted-foreground mt-4 text-base">
@@ -30,7 +30,7 @@ import { ContainerFluid, Container } from '@/shared/ui';
             </button>
           </div>
         </div>
-        <div class="flex w-1/2 justify-center">
+        <div class="mt-10 flex w-full justify-center md:mt-0 md:w-1/2">
           <img
             src="/images/hero-fone-mobile.png"
             alt="hero-banner-phone"
