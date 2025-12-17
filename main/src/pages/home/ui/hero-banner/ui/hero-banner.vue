@@ -1,5 +1,43 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { ContainerFluid, Container } from '@/shared/ui';
+</script>
 
 <template>
-  <div />
+  <ContainerFluid class="bg-[url('/images/hero-banner.png')] bg-cover bg-center">
+    <Container class="h-full py-10">
+      <div class="flex h-full">
+        <div class="flex w-1/2 flex-col items-center gap-2">
+          <div class="mt-4">
+            <h1 class="text-5xl font-bold">The easiest way to manage projects</h1>
+            <p class="text-muted-foreground mt-4 text-base">
+              From the small stuff to the big picture, organizes the work so teams know what to do,
+              why it matters, and how to get it done.
+            </p>
+          </div>
+          <div class="mt-10 flex w-full justify-start gap-6">
+            <button class="cursor-pointer rounded-md bg-[#7C3AED] px-4 py-2 text-white">
+              Get Started
+            </button>
+            <button
+              class="flex cursor-pointer items-center gap-1 rounded-md border border-gray-300 bg-transparent px-4 py-2"
+            >
+              <img
+                src="/icons/video-play.png"
+                alt="play"
+                class="h-6 w-6"
+              />
+              Watch Video
+            </button>
+          </div>
+        </div>
+        <div class="flex w-1/2 justify-center">
+          <img
+            src="/images/hero-fone-mobile.png"
+            alt="hero-banner-phone"
+            class="h-[640px] w-[320px]"
+          />
+        </div>
+      </div>
+    </Container>
+  </ContainerFluid>
 </template>
