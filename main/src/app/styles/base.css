@@ -1,0 +1,13 @@
+@layer utilities {
+  .text-muted-foreground {
+    color: var(--muted-foreground);
+  }
+
+  .focus-visible\:border-ring:focus-visible {
+    border-color: var(--ring);
+  }
+
+  .focus-visible\:ring-ring\/50:focus-visible {
+    box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 50%, transparent);
+  }
+}

@@ -1,1 +1,1 @@
-export { default as FeatureLoginForm } from './ui/feature.vue';
+export { default as FeatureLoginForm } from './ui/login-form.vue';
