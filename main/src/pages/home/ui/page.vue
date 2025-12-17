@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { HeroBanner } from './hero-banner';
 import { Manage } from './manage';
 import { Achievements } from './achievements';
 import { Integrations } from './integrations';
@@ -10,13 +11,13 @@ import { ContainerFluid } from '@/shared/ui';
 
 <template>
   <div>
-    <h1>Home</h1>
     <ContainerFluid>
+      <HeroBanner />
       <Features />
-      <div class="flex flex-col transition-all duration-300">
+      <section class="flex flex-col transition-all duration-300">
         <RealStories class="order-2 md:order-1" />
         <Achievements class="order-1 md:order-2" />
-      </div>
+      </section>
     </ContainerFluid>
     <Integrations />
     <Manage />
