@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { ContainerFluid, Container } from '@/shared/ui';
+import { AnimationElement } from '@/shared/ui';
 </script>
 
 <template>
@@ -8,14 +9,30 @@ import { ContainerFluid, Container } from '@/shared/ui';
       <div class="flex h-full flex-col gap-4 md:flex-row">
         <div class="flex w-full flex-col items-center gap-2 md:w-1/2">
           <div class="mt-4">
-            <h1 class="text-5xl font-bold">The easiest way to manage projects</h1>
-            <p class="text-muted-foreground mt-4 text-base">
+            <AnimationElement
+              tag="h1"
+              :duration="1000"
+              animation="fade-left"
+              class="text-5xl font-bold"
+            >
+              The easiest way to manage projects
+            </AnimationElement>
+            <AnimationElement
+              tag="p"
+              animation="fade-down"
+              :duration="1000"
+              class="text-muted-foreground mt-4 text-base"
+            >
               From the small stuff to the big picture, organizes the work so teams know what to do,
               why it matters, and how to get it done.
-            </p>
+            </AnimationElement>
           </div>
           <div class="mt-10 flex w-full justify-start gap-6">
-            <button class="cursor-pointer rounded-md bg-[#7C3AED] px-4 py-2 text-white">
+            <button
+              animation="zoom-in"
+              tag="button"
+              class="cursor-pointer rounded-md bg-[#7C3AED] px-4 py-2 text-white"
+            >
               Get Started
             </button>
             <button

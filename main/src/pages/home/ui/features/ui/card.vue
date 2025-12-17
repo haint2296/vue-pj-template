@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { AnimationElement } from '@/shared/ui';
 interface CardProps {
   title: string;
   description: string;
@@ -13,7 +14,12 @@ const _props = withDefaults(defineProps<CardProps>(), {
 </script>
 
 <template>
-  <div class="flex flex-col items-center gap-4 p-2">
+  <AnimationElement
+    tag="div"
+    animation="scale"
+    :duration="300"
+    class="flex flex-col items-center gap-4 p-2"
+  >
     <div>
       <img
         :src="_props.icon"
@@ -29,5 +35,5 @@ const _props = withDefaults(defineProps<CardProps>(), {
         {{ _props.description }}
       </p>
     </div>
-  </div>
+  </AnimationElement>
 </template>

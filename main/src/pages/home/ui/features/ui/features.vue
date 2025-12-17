@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { ContainerFluid, Container } from '@/shared/ui';
+import { AnimationElement } from '@/shared/ui';
 
 import Card from './card.vue';
 
@@ -46,7 +47,10 @@ const features = [
 <template>
   <ContainerFluid class="bg-white">
     <Container class="py-10">
-      <div
+      <AnimationElement
+        tag="div"
+        animation="scale"
+        :duration="400"
         class="flex flex-wrap items-center justify-evenly gap-6 border-t border-b border-gray-100 p-4 md:gap-4"
       >
         <img
@@ -79,14 +83,19 @@ const features = [
           alt="features-head-fex-ex"
           class="h-[26px] w-[80px]"
         />
-      </div>
-      <div class="mt-20 w-full text-center">
+      </AnimationElement>
+      <AnimationElement
+        animation="fade-up"
+        tag="div"
+        :duration="400"
+        class="mt-20 w-full text-center"
+      >
         <h2 class="text-4xl font-bold">Tailor-made features</h2>
         <p class="text-muted-foreground mx-auto mt-2 max-w-[75%] text-base">
           Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a
           document or visual presentation.
         </p>
-      </div>
+      </AnimationElement>
       <div class="mt-16 grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         <Card
           v-for="feature in features"
